@@ -18,11 +18,11 @@
 package tv.danmaku.ijk.media.example.widget.media;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
 import android.view.View;
 
 import java.lang.ref.WeakReference;
 
+import androidx.annotation.NonNull;
 import tv.danmaku.ijk.media.example.R;
 
 public final class MeasureHelper {

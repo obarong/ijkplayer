@@ -25,8 +25,6 @@ import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Build;
-import android.support.annotation.NonNull;
-import android.support.v7.app.AlertDialog;
 import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.util.Log;
@@ -48,6 +46,8 @@ import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import tv.danmaku.ijk.media.exo.IjkExoMediaPlayer;
 import tv.danmaku.ijk.media.player.AndroidMediaPlayer;
 import tv.danmaku.ijk.media.player.IMediaPlayer;
@@ -176,9 +176,9 @@ public class IjkVideoView extends FrameLayout implements MediaController.MediaPl
         subtitleDisplay = new TextView(context);
         subtitleDisplay.setTextSize(24);
         subtitleDisplay.setGravity(Gravity.CENTER);
-        FrameLayout.LayoutParams layoutParams_txt = new FrameLayout.LayoutParams(
-                FrameLayout.LayoutParams.MATCH_PARENT,
-                FrameLayout.LayoutParams.WRAP_CONTENT,
+        LayoutParams layoutParams_txt = new LayoutParams(
+                LayoutParams.MATCH_PARENT,
+                LayoutParams.WRAP_CONTENT,
                 Gravity.BOTTOM);
         addView(subtitleDisplay, layoutParams_txt);
     }
@@ -205,9 +205,9 @@ public class IjkVideoView extends FrameLayout implements MediaController.MediaPl
             renderView.setVideoSampleAspectRatio(mVideoSarNum, mVideoSarDen);
 
         View renderUIView = mRenderView.getView();
-        FrameLayout.LayoutParams lp = new FrameLayout.LayoutParams(
-                FrameLayout.LayoutParams.WRAP_CONTENT,
-                FrameLayout.LayoutParams.WRAP_CONTENT,
+        LayoutParams lp = new LayoutParams(
+                LayoutParams.WRAP_CONTENT,
+                LayoutParams.WRAP_CONTENT,
                 Gravity.CENTER);
         renderUIView.setLayoutParams(lp);
         addView(renderUIView);

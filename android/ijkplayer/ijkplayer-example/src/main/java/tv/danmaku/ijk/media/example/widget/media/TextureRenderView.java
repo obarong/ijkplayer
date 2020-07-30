@@ -21,8 +21,6 @@ import android.annotation.TargetApi;
 import android.content.Context;
 import android.graphics.SurfaceTexture;
 import android.os.Build;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.Surface;
@@ -36,6 +34,8 @@ import java.lang.ref.WeakReference;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import tv.danmaku.ijk.media.player.IMediaPlayer;
 import tv.danmaku.ijk.media.player.ISurfaceTextureHolder;
 import tv.danmaku.ijk.media.player.ISurfaceTextureHost;
@@ -130,11 +130,11 @@ public class TextureRenderView extends TextureView implements IRenderView {
     // TextureViewHolder
     //--------------------
 
-    public IRenderView.ISurfaceHolder getSurfaceHolder() {
+    public ISurfaceHolder getSurfaceHolder() {
         return new InternalSurfaceHolder(this, mSurfaceCallback.mSurfaceTexture, mSurfaceCallback);
     }
 
-    private static final class InternalSurfaceHolder implements IRenderView.ISurfaceHolder {
+    private static final class InternalSurfaceHolder implements ISurfaceHolder {
         private TextureRenderView mTextureView;
         private SurfaceTexture mSurfaceTexture;
         private ISurfaceTextureHost mSurfaceTextureHost;
@@ -212,7 +212,7 @@ public class TextureRenderView extends TextureView implements IRenderView {
 
     private SurfaceCallback mSurfaceCallback;
 
-    private static final class SurfaceCallback implements TextureView.SurfaceTextureListener, ISurfaceTextureHost {
+    private static final class SurfaceCallback implements SurfaceTextureListener, ISurfaceTextureHost {
         private SurfaceTexture mSurfaceTexture;
         private boolean mIsFormatChanged;
         private int mWidth;

@@ -20,9 +20,10 @@ package tv.danmaku.ijk.media.example.content;
 import android.content.Context;
 import android.database.Cursor;
 import android.os.Environment;
-import android.support.v4.content.AsyncTaskLoader;
 
 import java.io.File;
+
+import androidx.loader.content.AsyncTaskLoader;
 
 public class PathCursorLoader extends AsyncTaskLoader<Cursor> {
     private File mPath;

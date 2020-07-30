@@ -18,8 +18,6 @@
 package tv.danmaku.ijk.media.example.activities;
 
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
 import android.text.TextUtils;
 
 import com.squareup.otto.Subscribe;
@@ -27,6 +25,8 @@ import com.squareup.otto.Subscribe;
 import java.io.File;
 import java.io.IOException;
 
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import tv.danmaku.ijk.media.example.R;
 import tv.danmaku.ijk.media.example.application.AppActivity;
 import tv.danmaku.ijk.media.example.application.Settings;
